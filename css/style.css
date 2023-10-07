@@ -1,0 +1,120 @@
+@font-face {
+  font-family: Gallerya;
+  src: url(../fonts/Gallerya-Regular.ttf);
+}
+
+@font-face {
+  font-family: LongaIberica;
+  src: url(../fonts/LongaIberica.ttf);
+}
+
+@font-face {
+  font-family: Dungeon;
+  src: url(../fonts/Dungeon.ttf);
+}
+
+/* Flexbox general settings */ 
+
+.flexbox {
+	display: flex;
+	background: #edddc2;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	align-items: stretch;
+}
+
+
+/* General block settings */
+
+.heading {
+	font-family: LongaIberica;
+	font-weight: bold;
+	font-size: 60px;
+	text-transform: uppercase;
+	flex: 1 0 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+}
+
+
+.portrait{
+	background-image: url("../img/pic.jpg");
+	height: 200px;
+	width: 200px;
+	background-size: cover;
+	border-style: solid none solid solid;
+	border-width: 20px;
+	border-radius: 50px 0px 0px 5px;
+	border-color: #6632a8 #6632a8 #331954 #6632a8 ;
+}
+
+
+/* Statistics block settings */
+
+.stats{
+	align-items: center;
+	border-style: solid;
+	border-width: 20px;
+	border-radius: 0px 50px 5px 0px;
+	border-color: #6632a8 #331954 #331954 #6632a8;
+	background-image: linear-gradient(#caddfc, #5372a3);
+	font-family: sans-serif;
+	font-variant: small-caps;
+}
+
+.table-header, .table-row {
+  display: flex;
+  justify-content: center;
+}
+
+.table-header {
+	font-weight: bold;
+	font-size: 30px;
+	margin: 5px;
+}
+
+.table-row:nth-child(even){
+	background-color: #e8e8e8;
+}
+
+.table-row:nth-child(odd){
+	background-color: #cacaca;
+}
+
+.table-column {
+  flex: 1;
+  text-align: center;
+  margin: 3px 10px;
+}
+
+/* Statistics block settings END */
+
+
+.name {
+	font-family: Gallerya;
+	font-weight: bold;
+	font-size: 40px;
+	font-variant: small-caps;
+    flex: 1 0 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	background-image: linear-gradient(315deg, #2f4353, #d2ccc4);
+}
+
+
+.char-class{
+	font-family: Dungeon;
+	font-weight: bold;
+	font-size: 40px;
+    flex: 1 0 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+}
