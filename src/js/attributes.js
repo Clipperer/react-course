@@ -36,7 +36,7 @@ const createAttributeObject = (attribute) => {
 }
 
 
-const injectAttributes = () => {
+export const injectAttributes = () => {
     const attributeBlock = document.getElementById('attributeBlock');
     const attributes = [{
         name: "Strength",
@@ -82,10 +82,4 @@ const styleSwitch = (modifier) => {
         result = BG_COLORS.NEGATIVE
     }
     return `background-color: ${result}`;
-}
-
-document.onreadystatechange = () => {
-    if (document.readyState === "complete") {
-        injectAttributes();
-    }
 }
