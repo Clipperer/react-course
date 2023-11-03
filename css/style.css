@@ -13,6 +13,20 @@
   src: url(../fonts/Dungeon.ttf);
 }
 
+
+/* Field background colors */
+
+.table-column.positive-bg {
+	background-color: #bfe6a5;
+}
+.table-column.neutral-bg {
+	background-color: #ecf5e6;
+}
+.table-column.negative-bg {
+	background-color: #f25e5e;
+}
+
+
 /* Flexbox general settings */ 
 
 .flexbox {
@@ -40,16 +54,18 @@
 	align-content: center;
 }
 
-
-.portrait{
+.portrait {
 	background-image: url("../img/pic.jpg");
-	height: 200px;
-	width: 200px;
-	background-size: cover;
+	/* height: 200px;
+	width: 200px; */
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
 	border-style: solid none solid solid;
 	border-width: 20px;
 	border-radius: 50px 0px 0px 5px;
-	border-color: #6632a8 #6632a8 #331954 #6632a8 ;
+	border-color: #6632a8 #6632a8 #331954 #6632a8;
+	flex-grow: 1;
 }
 
 
@@ -64,6 +80,7 @@
 	background-image: linear-gradient(#caddfc, #5372a3);
 	font-family: sans-serif;
 	font-variant: small-caps;
+	flex-grow: 1;
 }
 
 .table-header, .table-row {
@@ -89,6 +106,23 @@
   flex: 1;
   text-align: center;
   margin: 3px 10px;
+}
+
+.table-header .table-column:nth-child(1), .table-row .table-column:nth-child(1) {
+	flex: 40;
+}
+.table-header .table-column:nth-child(2), .table-row .table-column:nth-child(2) {
+	flex: 30;
+}
+.table-header .table-column:nth-child(3), .table-row .table-column:nth-child(3) {
+	flex: 30;
+}
+
+.table-column.attr-score input[type="number"] {
+	text-align: center;
+	max-width: 95%;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 /* Statistics block settings END */
