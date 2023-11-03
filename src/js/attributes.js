@@ -11,7 +11,7 @@ const changeModifier = (ev) => {
     const tableRow = getTopmostParent(srcElement);
     const modifierEl = tableRow.querySelector(".attr-modifier");
     const modifierValue = calculateModifier(newScore);
-    
+
     modifierEl.innerText = modifierValue;
     modifierEl.className = `table-column attr-modifier ${styleSwitch(modifierValue)}`;
 
@@ -33,7 +33,8 @@ const createAttributeObject = ({ name, score = defaultAttributeScore }) => {
     return attributeEl;
 }
 
-const injectAttributes = () => {
+
+export const injectAttributes = () => {
     const attributeBlock = document.getElementById('attributeBlock');
     const attributes = ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"];
 
@@ -41,6 +42,26 @@ const injectAttributes = () => {
         const attribute = createAttributeObject({name: attributeName});
         attributeBlock.appendChild(attribute);
     });
+}
+
+const calculateModifier = (score) => {
+    let result = 0;
+    if (score > 10) {
+        result = Math.floor((score - 10) / 2);
+    } else if (score < 10) {
+        result = -Math.ceil((10 - score) / 2);
+    }
+    return result;
+}
+
+const styleSwitch = (modifier) => {
+    let result = BG_COLORS.NEUTRAL
+    if (modifier > 0) {
+        result = BG_COLORS.POSITIVE
+    } else if (modifier < 0) {
+        result = BG_COLORS.NEGATIVE
+    }
+    return `background-color: ${result}`;
 }
 
 document.onreadystatechange = () => {
