@@ -1,31 +1,16 @@
-@font-face {
-  font-family: Gallerya;
-  src: url(../Fonts/Gallerya-Regular.ttf);
-}
-
-@font-face {
-  font-family: LongaIberica;
-  src: url(../Fonts/LongaIberica.ttf);
-}
-
-@font-face {
-  font-family: Dungeon;
-  src: url(../Fonts/dungeon.ttf);
-}
-
-
+@import "vars";
+@import "fonts";
 /* Field background colors */
 
-.table-column.positive-bg {
-	background-color: #bfe6a5;
+.positive-bg {
+	background-color: $positive-bg;
 }
-.table-column.neutral-bg {
-	background-color: #ecf5e6;
+.neutral-bg {
+	background-color: $neutral-bg;
 }
-.table-column.negative-bg {
-	background-color: #f25e5e;
+.negative-bg {
+	background-color: $negative-bg;
 }
-
 
 /* Flexbox general settings */ 
 
@@ -55,7 +40,7 @@
 }
 
 .portrait {
-	background-image: url("../img/pic.jpg");
+	background-image: url("../../public/img/pic.jpg");
 	/* height: 200px;
 	width: 200px; */
 	background-size: 100% 100%;
@@ -129,7 +114,7 @@
 
 
 .name {
-	font-family: Gallerya;
+	@include font($galleryaFont);
 	font-weight: bold;
 	font-size: 40px;
 	font-variant: small-caps;

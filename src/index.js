@@ -1,9 +1,8 @@
-import {injectAttributes} from "./js/attributes";
-
-import "./css/style.css"
+import "./scss/style.scss"
+import { injectAttributes } from "./js/attributes/inject-attributes"
 
 document.onreadystatechange = () => {
-    if (document.readyState === "complete") {
-        injectAttributes();
-    }
+  if (document.readyState === "complete") {
+    injectAttributes()
+  }
 }
