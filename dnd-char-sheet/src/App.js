@@ -1,20 +1,16 @@
 import "./App.css";
 import { AppContextProvider } from "./contexts/app-context";
 import Button from "./components/button";
-import CountShower from "./components/CountShower";
 
 function App() {
+  const buttons = ["test1", "test2", "test3"];
   return (
     <>
       <AppContextProvider>
-        <Button text="test" />
-        <Button text="test2" />
-        <Button text="test3" />
-        <CountShower />
-      </AppContextProvider>
-      <AppContextProvider>
-        <Button text="second context" />
-        <CountShower />
+        {buttons.map((button, index) => {
+          const buttonText = `${button}-${index}`;
+          return <Button key={buttonText} text={buttonText} />;
+        })}
       </AppContextProvider>
     </>
   );
