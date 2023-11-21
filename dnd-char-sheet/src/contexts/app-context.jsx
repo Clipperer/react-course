@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
 const initialAppContext = {
-  count: 4,
-  setCount: () => {
-    console.log("test");
-  },
+  count: 0,
+  setCount: () => "",
 };
 
 export const AppContext = React.createContext(initialAppContext);
