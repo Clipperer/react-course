@@ -1,9 +1,20 @@
-const Button = ({ text, count, handleClick }) => {
+import { useContext } from "react";
+import { AppContext } from "../../contexts/app-context";
+import CountShower from "../CountShower";
+
+const Button = ({ text }) => {
+  const { count, setCount } = useContext(AppContext);
+
+  console.log("count", count);
   return (
     <>
-      Clicked {count} times.
+      <h1>{text}</h1>
+      <CountShower />
       <br />
-      <button onClick={handleClick}>{text}</button>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <br />
+      <button onClick={() => setCount(count - 1)}>Decrease</button>
+      <br />
     </>
   );
 };
